@@ -96,7 +96,7 @@ body {
 }
 .tile > div > img:hover {
   /* filter: blur(6px); */
-  border: solid 20px white;
+  border: solid 15px white;
 }
 
 
