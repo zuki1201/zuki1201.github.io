@@ -35,7 +35,7 @@ function init() {
     scene.add(light);
     scene.add(ambient);
 
-    scene.background = new THREE.Color(0xe6e6e6);
+    scene.background = new THREE.Color(0xffffff);
     
     camera.position.set(200, 100, 300);
     camera.lookAt(scene.position);
@@ -80,7 +80,7 @@ function init() {
     const loader = new GLTFLoader();
     
     loader.load(
-        '../models/staplers2.glb',
+        '../models/screwscatter.glb',
         (object) => {
             stapler = object.scene;
             scene.add( object.scene );
@@ -122,7 +122,7 @@ function init() {
     const canvasElement = document.querySelector('#stage');
     const renderer = new THREE.WebGLRenderer({ canvas: canvasElement});
     renderer.setSize(width, height);
-    renderer.setClearColor(0xefefef);
+    renderer.setClearColor(0xffffff);
     // renderer.setPixelRatio(0.4);
     renderer.setPixelRatio(0.5);
     renderer.shadowMap.enabled = true;
@@ -133,6 +133,13 @@ function init() {
         
         stapler.rotation.y += 0.0005;
         // stapler2.rotation.y += 0.02;
+
+        // setTimeout( function() {
+
+        //     requestAnimationFrame( animate );
+    
+        // }, 1000 / 30 );
+
         renderer.render(scene, camera);
     }
     render();
